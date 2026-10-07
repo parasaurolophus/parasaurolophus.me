@@ -1,18 +1,18 @@
 <!-- Copyright (c) Kirk Rader 2026 -->
 
 <template>
-    <MdiIcon :scale="scale" :path="path" class="button" />
+    <svg :width="24 * scale" :height="24 * scale">
+        <path :d="path" />
+    </svg>
 </template>
 
 <style scoped>
-.button {
-    cursor: pointer;
+svg path {
+    stroke: rgb(from currentColor r g b / 0.5);
 }
 </style>
 
 <script setup>
-import MdiIcon from '@/components/MdiIcon.vue'
-
 const { path } = defineProps({
 
     path: {

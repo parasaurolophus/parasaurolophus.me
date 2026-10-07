@@ -2,7 +2,10 @@
 
 <template>
     <header>
-        <span class="title">parasaurolophus</span>
+        <div>
+            <div class="title">parasaurolophus</div>
+            <BreadCrumbs />
+        </div>
         <MdiButton :path="mdiThemeLightDark" @click="toggleTheme" class="theme-button" />
     </header>
 </template>
@@ -13,7 +16,7 @@
 }
 
 .title {
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: bold;
 }
 </style>
@@ -22,6 +25,7 @@
 import MdiButton from '@/components/MdiButton.vue'
 import { mdiThemeLightDark } from '@mdi/js'
 import { provide } from 'vue'
+import BreadCrumbs from './BreadCrumbs.vue'
 
 function toggleTheme() {
 
