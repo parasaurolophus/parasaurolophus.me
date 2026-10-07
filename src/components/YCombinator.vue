@@ -1,0 +1,54 @@
+<!-- Copyright (c) 2026 Kirk Rader -->
+
+<template>
+    <math display="block">
+        <mtable>
+            <mtr>
+                <mtd>
+                    <mrow>
+                        <mi>Y</mi>
+                        <mi>f</mi>
+                    </mrow>
+                    <mo>=</mo>
+                    <mrow>
+                        <mi>f</mi>
+                        <mo>(</mo>
+                        <mi>Y</mi>
+                        <mi>f</mi>
+                        <mo>)</mo>
+                    </mrow>
+                </mtd>
+            </mtr>
+            <mtr>
+                <mtd>
+                    <mtext>where</mtext>
+                    <mspace width="0.5em" />
+                    <mi>Y</mi>
+                    <mo>=</mo>
+                    <mrow>
+                        <mo>&lambda;</mo>
+                        <mi>y</mi>
+                        <mo>.</mo>
+                        <template v-for="count in 2">
+                            <mrow>
+                                <mo>(</mo>
+                                <mo>&lambda;</mo>
+                                <mi>x</mi>
+                                <mo>.</mo>
+                                <mrow>
+                                    <mi>y</mi>
+                                    <mo>(</mo>
+                                    <mi>x</mi>
+                                    <mspace width="0.5em" />
+                                    <mi>x</mi>
+                                    <mo>)</mo>
+                                </mrow>
+                                <mo>)</mo>
+                            </mrow>
+                        </template>
+                    </mrow>
+                </mtd>
+            </mtr>
+        </mtable>
+    </math>
+</template>

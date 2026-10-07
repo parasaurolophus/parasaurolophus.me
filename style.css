@@ -1,0 +1,198 @@
+/* Copyright (c) Kirk Rader 2026 */
+
+@font-face {
+    font-family: 'Noto Sans Mono';
+    src: url('/fonts/NotoSansMono-Regular.woff2') format('woff2'),
+        url('/fonts/NotoSansMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Latin Modern Math';
+    src: url('/fonts/LatinModernMath-Regular.woff2') format('woff2'),
+        url('/fonts/LatinModernMath-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+
+    /* panel dimensions & offsets */
+    --headerheight: 4lh;
+    --footerheight: 2lh;
+}
+
+.dark-theme {
+
+    /* base colors */
+    --foreground: rgb(224 224 224);
+    --background: rgb(32 32 32);
+    --highlight: hsl(from var(--background) h s calc(l + 10));
+
+    /* semantic colors */
+    --success: lightgreen;
+    --warning: yellow;
+    --failure: red;
+
+    /* accent colors */
+    --primary: cyan;
+    --secondary: magenta;
+}
+
+.light-theme {
+
+    /* base colors */
+    --background: rgb(224 224 224);
+    --foreground: rgb(32 32 32);
+    --highlight: hsl(from var(--background) h s calc(l - 10));
+
+    /* semantic colors */
+    --success: green;
+    --warning: goldenrod;
+    --failure: darkred;
+
+    /* accent colors */
+    --primary: blue;
+    --secondary: purple;
+}
+
+* {
+    border-width: 1px;
+    border-color: var(--foreground);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--secondary);
+}
+
+a:active,
+a:hover {
+    text-decoration: underline;
+}
+
+blockquote {
+    font-style: italic;
+}
+
+blockquote i,
+blockquote em {
+    font-style: normal;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: var(--footerheight);
+    bottom: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    border-top-style: solid;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--headerheight);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: start;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-bottom-style: solid;
+}
+
+input {
+    accent-color: var(--primary);
+}
+
+main {
+    position: fixed;
+    overflow: auto;
+    top: var(--headerheight);
+    left: 0;
+    right: 0;
+    bottom: var(--footerheight);
+    display: flex;
+    flex-flow: column nowrap;
+    overflow: auto;
+    padding: 1rem;
+}
+
+@media (orientation: landscape) {
+
+    main {
+        flex-flow: row nowrap;
+    }
+}
+
+math {
+    font-family: 'Latin Modern Math';
+}
+
+#sidebar {
+    display: none;
+    position: fixed;
+    background-color: var(--highlight);
+    overflow: auto;
+    top: calc(var(--headerheight) + 1px);
+    left: 0;
+    width: max-content;
+    bottom: calc(var(--footerheight) + 1px);
+    overflow: auto;
+    z-index: 10;
+}
+
+svg {
+    fill: var(--foreground);
+}
+
+td,
+th {
+    padding: 0.25rem;
+}
+
+thead tr,
+tbody tr:nth-child(even) {
+    background-color: var(--highlight);
+}
+
+svg circle {
+    fill: currentColor;
+}
+
+svg line {
+    stroke: currentColor;
+    stroke-width: 4;
+}
+
+svg text {
+    font-family: 'Latin Modern Math';
+    font-size: 1rem;
+    fill: currentColor;
+}

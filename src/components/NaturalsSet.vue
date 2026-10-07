@@ -1,0 +1,51 @@
+<!-- Copyright (c) 2026 Kirk Rader -->
+
+<template>
+    <math display="block">
+        <mi>&naturals;</mi>
+        <mo>=</mo>
+        <mrow>
+            <mo>{</mo>
+            <mi>n</mi>
+            <mo>:</mo>
+            <mrow>
+                <mo>(</mo>
+                <mi>n</mi>
+                <mo>=</mo>
+                <mn>0</mn>
+                <mo>)</mo>
+            </mrow>
+            <mo>&or;</mo>
+            <mrow>
+                <mo>(</mo>
+                <mo>&exist;</mo>
+                <mi>m</mi>
+                <mrow>
+                    <mo>(</mo>
+                    <mrow>
+                        <mo>(</mo>
+                        <mi>m</mi>
+                        <mo>&in;</mo>
+                        <mi>&naturals;</mi>
+                        <mo>)</mo>
+                    </mrow>
+                    <mo>&and;</mo>
+                    <mrow>
+                        <mo>(</mo>
+                        <mi>n</mi>
+                        <mo>=</mo>
+                        <mrow>
+                            <mi>m</mi>
+                            <mo>+</mo>
+                            <mn>1</mn>
+                        </mrow>
+                        <mo>)</mo>
+                    </mrow>
+                    <mo>)</mo>
+                </mrow>
+                <mo>)</mo>
+            </mrow>
+            <mo>}</mo>
+        </mrow>
+    </math>
+</template>
