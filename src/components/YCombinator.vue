@@ -9,7 +9,7 @@
                         <mi>Y</mi>
                         <mi>f</mi>
                     </mrow>
-                    <mo>=</mo>
+                    <mo>&equiv;</mo>
                     <mrow>
                         <mi>f</mi>
                         <mo>(</mo>

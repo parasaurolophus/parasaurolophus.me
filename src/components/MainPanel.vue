@@ -2,7 +2,6 @@
 
 <template>
     <main>
-        <img src="/parasaurolophus_avatar.webp" alt="parasaurolophus" class="avatar">
         <div>
             <RouterView />
         </div>
@@ -11,26 +10,15 @@
 </template>
 
 <style scoped>
-.avatar {
-    margin-left: auto;
-    margin-right: auto;
-    width: min-content;
-    padding: 1rem;
-}
-
 .image {
     display: none;
-    margin-left: auto;
 }
 
 @media (orientation: landscape) {
 
-    .avatar {
-        display: none;
-    }
-
     .image {
         display: inline;
+        margin-left: auto;
     }
 }
 </style>

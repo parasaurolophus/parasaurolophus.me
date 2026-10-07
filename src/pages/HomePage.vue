@@ -2,8 +2,6 @@
 
 <template>
 
-    <h2>home</h2>
-
     <div class="links">
         <a v-for="link in links" :href="link.text" target="_blank">
             <QrCode :text="link.text" :label="link.label" />
@@ -15,6 +13,7 @@
     <RussellParadox />
     <hr>
     <YCombinator />
+    <hr>
     <CodeBlock v-model="factorial" />
 
 </template>
@@ -23,9 +22,8 @@
 .links {
     display: flex;
     flex-flow: row wrap balance;
-    padding: 1rem;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 </style>
 
@@ -39,19 +37,20 @@ import { ref } from 'vue'
 
 const links = [
     {
+        text: 'https://hyperfollow.com/kirkrader',
+        label: 'HyperFollow',
+    },
+    {
         text: 'https://rader.us',
         label: 'https://rader.us',
     },
     {
-        text: 'https://hyperfollow.com/kirkrader',
-        label: 'HyperFollow',
+        text: 'https://github.com/parasaurolophus',
+        label: 'GitHub',
     },
 ]
 
-const factorial = ref(`;; calculate 10,000! using tail-recursion
-;; to prevent stack overflow
-
-(let factorial ((a 1)
+const factorial = ref(`(let factorial ((a 1)
                 (n 10000))
     (if (< n 2)
         a

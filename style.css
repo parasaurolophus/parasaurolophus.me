@@ -96,7 +96,6 @@ body {
 code {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    color: white;
 }
 
 footer {
@@ -155,21 +154,18 @@ math {
     font-family: 'Latin Modern Math';
 }
 
-#sidebar {
-    display: none;
-    position: fixed;
-    background-color: var(--highlight);
-    overflow: auto;
-    top: calc(var(--headerheight) + 1px);
-    left: 0;
-    width: max-content;
-    bottom: calc(var(--footerheight) + 1px);
-    overflow: auto;
-    z-index: 10;
-}
-
 svg {
     fill: var(--foreground);
+}
+
+svg line {
+    stroke: var(--foreground);
+    stroke-width: 4;
+}
+
+svg text {
+    font-family: 'Latin Modern Math';
+    font-size: 1rem;
 }
 
 td,
@@ -180,19 +176,4 @@ th {
 thead tr,
 tbody tr:nth-child(even) {
     background-color: var(--highlight);
-}
-
-svg circle {
-    fill: currentColor;
-}
-
-svg line {
-    stroke: currentColor;
-    stroke-width: 4;
-}
-
-svg text {
-    font-family: 'Latin Modern Math';
-    font-size: 1rem;
-    fill: currentColor;
 }
