@@ -2,7 +2,7 @@
 
 <template>
     <header>
-        <QrCode :text="route.path" />
+        <QrCode :text="url" />
         <div>
             <div class="title">parasaurolophus</div>
             <BreadCrumbs />
@@ -41,9 +41,9 @@ import BreadCrumbs from '@/components/BreadCrumbs.vue'
 import MdiButton from '@/components/MdiButton.vue'
 import QrCode from '@/components/QrCode.vue'
 import { mdiThemeLightDark } from '@mdi/js'
-import { useRoute } from 'vue-router'
+import { computed } from 'vue'
 
-const route = useRoute()
+const url = computed(() => window.location.href)
 
 function toggleTheme() {
 
