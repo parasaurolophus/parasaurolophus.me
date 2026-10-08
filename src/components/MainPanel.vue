@@ -14,7 +14,7 @@
     display: none;
 }
 
-@media (orientation: landscape) {
+@media (width >= 1200px) {
 
     .image {
         display: inline;

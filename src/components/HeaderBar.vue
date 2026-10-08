@@ -8,31 +8,24 @@
             <BreadCrumbs />
         </div>
         <MdiButton :path="mdiThemeLightDark" @click="toggleTheme" class="theme-button" />
-        <img src="/parasaurolophus_avatar.webp" alt="parasaurolophus" class="avatar" />
     </header>
 </template>
 
 <style scoped>
-.avatar {
-    display: inline;
-    height: 50%;
-    margin: 0.5rem;
-}
-
-@media (orientation: landscape) {
-
-    .avatar {
-        display: none;
-    }
-}
-
 .theme-button {
     margin-left: auto;
 }
 
 .title {
-    font-size: x-large;
+    font-size: large;
     font-weight: bold;
+}
+
+@media (width >= 1200px) {
+
+    .title {
+        font-size: x-large;
+    }
 }
 </style>
 

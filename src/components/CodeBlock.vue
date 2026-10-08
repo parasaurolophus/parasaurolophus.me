@@ -3,7 +3,7 @@
 <template>
     <div>
         <highlightjs :code="code" class="code-block copyable" @click.prevent.stop="copy" />
-        <dialog ref="dialog" popover closedby="any">
+        <dialog ref="dialog" popover closedby="any" @click.prevent.stop="closeDialog">
             <pre>{{ code }}</pre> copied to the clipboard
         </dialog>
     </div>
@@ -14,6 +14,11 @@ import { useTemplateRef } from 'vue'
 
 const code = defineModel()
 const dialog = useTemplateRef('dialog')
+
+function closeDialog(event) {
+
+    dialog.value.close()
+}
 
 function copy() {
 

@@ -157,7 +157,7 @@ main {
     padding: 1rem;
 }
 
-@media (orientation: landscape) {
+@media (width >= 1200px) {
 
     main {
         flex-flow: row nowrap;
