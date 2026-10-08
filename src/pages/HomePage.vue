@@ -24,15 +24,10 @@
     <hr>
 
     <template v-if="mobile">
-
         <div class="undecidable">
-
             <UndecidableLink :table="true" />
-
         </div>
-
         <hr>
-
     </template>
 
     <CodeBlock v-model="factorial" />
@@ -50,9 +45,16 @@
 <style scoped>
 .links {
     display: flex;
-    flex-flow: row wrap balance;
+    flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between;
+}
+
+@media (width >= 1200px) {
+
+    .links {
+        flex-flow: row wrap balance;
+    }
 }
 
 .undecidable {
