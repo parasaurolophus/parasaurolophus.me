@@ -33,9 +33,9 @@
                             <mo>=</mo>
                             <mn>0</mn>
                         </mrow>
-                        <mspace width="0.5em" />
-                        <mo>&or;</mo>
-                        <mspace width="0.5em" />
+                        <mpadded width="1.5em" lspace="0.5em">
+                            <mo>&or;</mo>
+                        </mpadded>
                         <mrow>
                             <mo>&exist;</mo>
                             <mi>m</mi>
@@ -46,9 +46,9 @@
                                     <mo>&in;</mo>
                                     <mi>&naturals;</mi>
                                 </mrow>
-                                <mspace width="0.5em" />
-                                <mo>&and;</mo>
-                                <mspace width="0.5em" />
+                                <mpadded width="1.5em" lspace="0.5em">
+                                    <mo>&and;</mo>
+                                </mpadded>
                                 <mrow>
                                     <mi>n</mi>
                                     <mo>=</mo>
