@@ -8,12 +8,29 @@
         </a>
     </div>
 
-    <NaturalsSet />
     <hr>
-    <RussellParadox />
+
+    <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/NaturalsSet.vue"
+        target="_blank">
+        <NaturalsSet />
+    </a>
+
     <hr>
-    <YCombinator />
+
+    <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/RussellParadox.vue"
+        target="_blank">
+        <RussellParadox />
+    </a>
+
     <hr>
+
+    <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/YCombinator.vue"
+        target="_blank">
+        <YCombinator />
+    </a>
+
+    <hr>
+
     <CodeBlock v-model="factorial" />
 
 </template>
@@ -30,6 +47,7 @@
 <script setup>
 import CodeBlock from '@/components/CodeBlock.vue'
 import NaturalsSet from '@/components/NaturalsSet.vue'
+import NaturalsSetPre from '@/components/NaturalsSetPre.vue'
 import QrCode from '@/components/QrCode.vue'
 import RussellParadox from '@/components/RussellParadox.vue'
 import YCombinator from '@/components/YCombinator.vue'

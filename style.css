@@ -93,9 +93,23 @@ body {
     font-family: 'Noto Sans Mono', monospace;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
+.copyable {
+    cursor: copy;
+}
+
 code {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+}
+
+dialog {
+    color: var(--foreground);
+    background-color: var(--background);
+    border-style: solid;
 }
 
 footer {
