@@ -2,14 +2,6 @@
 
 <template>
 
-    <div class="links">
-        <a v-for="link in links" :href="link.text" target="_blank">
-            <QrCode :text="link.text" :label="link.label" />
-        </a>
-    </div>
-
-    <hr>
-
     <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/NaturalsSet.vue"
         target="_blank">
         <NaturalsSet />
@@ -32,6 +24,14 @@
     <hr>
 
     <CodeBlock v-model="factorial" />
+
+    <hr>
+
+    <div class="links">
+        <a v-for="link in links" :href="link.text" target="_blank">
+            <QrCode :text="link.text" :label="link.label" />
+        </a>
+    </div>
 
 </template>
 

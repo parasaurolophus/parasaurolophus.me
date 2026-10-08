@@ -2,6 +2,7 @@
 
 <template>
     <header>
+        <QrCode :text="route.path" />
         <div>
             <div class="title">parasaurolophus</div>
             <BreadCrumbs />
@@ -36,10 +37,13 @@
 </style>
 
 <script setup>
+import BreadCrumbs from '@/components/BreadCrumbs.vue'
 import MdiButton from '@/components/MdiButton.vue'
+import QrCode from '@/components/QrCode.vue'
 import { mdiThemeLightDark } from '@mdi/js'
-import { provide } from 'vue'
-import BreadCrumbs from './BreadCrumbs.vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 
 function toggleTheme() {
 
@@ -70,6 +74,4 @@ function toggleTheme() {
     classes.add('dark-theme')
     body.classList = classes
 }
-
-provide('toggleTheme', toggleTheme)
 </script>
