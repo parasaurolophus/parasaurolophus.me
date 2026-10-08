@@ -47,7 +47,6 @@
 <script setup>
 import CodeBlock from '@/components/CodeBlock.vue'
 import NaturalsSet from '@/components/NaturalsSet.vue'
-import NaturalsSetPre from '@/components/NaturalsSetPre.vue'
 import QrCode from '@/components/QrCode.vue'
 import RussellParadox from '@/components/RussellParadox.vue'
 import YCombinator from '@/components/YCombinator.vue'
