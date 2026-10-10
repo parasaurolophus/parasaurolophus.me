@@ -4,21 +4,21 @@
 
     <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/NaturalsSet.vue"
         target="_blank">
-        <NaturalsSet />
+        <NaturalsSet v-model="mobile" />
     </a>
 
     <hr>
 
     <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/RussellParadox.vue"
         target="_blank">
-        <RussellParadox />
+        <RussellParadox v-model="mobile"/>
     </a>
 
     <hr>
 
     <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/YCombinator.vue"
         target="_blank">
-        <YCombinator />
+        <YCombinator v-model="mobile"/>
     </a>
 
     <hr>
@@ -50,7 +50,7 @@
     justify-content: space-between;
 }
 
-@media (width >= 1200px) {
+@media (width >=1200px) {
 
     .links {
         flex-flow: row wrap balance;

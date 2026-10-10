@@ -2,9 +2,9 @@
 
 <template>
     <math display="block">
-        <mtable>
-            <mtr>
-                <mtd>
+        <component :is="mobile ? 'mtable' : 'mrow'">
+            <component :is="mobile ? 'mtr' : 'mrow'">
+                <component :is="mobile ? 'mtd' : 'mrow'">
                     <mrow>
                         <mi>S</mi>
                         <mi>&in;</mi>
@@ -16,8 +16,8 @@
                         <mi>&notin;</mi>
                         <mi>S</mi>
                     </mrow>
-                </mtd>
-            </mtr>
+                </component>
+            </component>
             <mtr>
                 <mtd>
                     <mtext>where</mtext>
@@ -37,6 +37,10 @@
                     </mrow>
                 </mtd>
             </mtr>
-        </mtable>
+        </component>
     </math>
 </template>
+
+<script setup>
+const mobile = defineModel()
+</script>

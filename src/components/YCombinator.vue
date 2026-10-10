@@ -2,9 +2,9 @@
 
 <template>
     <math display="block">
-        <mtable>
-            <mtr>
-                <mtd>
+        <component :is="mobile ? 'mtable' : 'mrow'">
+            <component :is="mobile ? 'mtr' : 'mrow'">
+                <component :is="mobile ? 'mtd' : 'mrow'">
                     <mrow>
                         <mi>Y</mi>
                         <mi>f</mi>
@@ -17,12 +17,21 @@
                         <mi>f</mi>
                         <mo>)</mo>
                     </mrow>
-                </mtd>
-            </mtr>
+                </component>
+            </component>
+            <template v-if="mobile">
+                <mtr>
+                    <mtd>
+                        <mtext>where</mtext>
+                    </mtd>
+                </mtr>
+            </template>
             <mtr>
                 <mtd>
-                    <mtext>where</mtext>
-                    <mspace width="0.5em" />
+                    <template v-if="!mobile">
+                        <mtext>where</mtext>
+                        <mspace width="0.5em" />
+                    </template>
                     <mi>Y</mi>
                     <mo>=</mo>
                     <mrow>
@@ -49,6 +58,10 @@
                     </mrow>
                 </mtd>
             </mtr>
-        </mtable>
+        </component>
     </math>
 </template>
+
+<script setup>
+const mobile = defineModel()
+</script>
