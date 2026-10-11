@@ -168,6 +168,10 @@ math {
     font-family: 'Latin Modern Math';
 }
 
+summary {
+    cursor: pointer;
+}
+
 svg {
     fill: var(--foreground);
 }

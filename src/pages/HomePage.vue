@@ -11,14 +11,14 @@
 
     <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/RussellParadox.vue"
         target="_blank">
-        <RussellParadox v-model="mobile"/>
+        <RussellParadox v-model="mobile" />
     </a>
 
     <hr>
 
     <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/YCombinator.vue"
         target="_blank">
-        <YCombinator v-model="mobile"/>
+        <YCombinator v-model="mobile" />
     </a>
 
     <hr>
@@ -35,28 +35,20 @@
     <hr>
 
     <div class="links">
-        <a v-for="link in links" :href="link.text" target="_blank">
-            <QrCode :text="link.text" :label="link.label" />
-        </a>
+        <details v-for="link in links" name="links">
+            <summary>
+                {{ link.label }}
+            </summary>
+            <a v-if="link.href" :href="link.href" target="_blank">
+                <QrCode :text="link.href" :label="link.href" size="large" />
+            </a>
+            <QrCode v-else :text="link.text" />
+        </details>
     </div>
 
 </template>
 
 <style scoped>
-.links {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
-@media (width >=1200px) {
-
-    .links {
-        flex-flow: row wrap balance;
-    }
-}
-
 .undecidable {
     display: flex;
     justify-content: center;
@@ -82,15 +74,15 @@ const mobile = ref(false)
 
 const links = [
     {
-        text: 'https://hyperfollow.com/kirkrader',
-        label: 'HyperFollow',
-    },
-    {
-        text: 'https://rader.us',
+        href: 'https://rader.us',
         label: 'https://rader.us',
     },
     {
-        text: 'https://github.com/parasaurolophus',
+        href: 'https://hyperfollow.com/kirkrader',
+        label: 'HyperFollow',
+    },
+    {
+        href: 'https://github.com/parasaurolophus',
         label: 'GitHub',
     },
 ]

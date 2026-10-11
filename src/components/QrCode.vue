@@ -2,7 +2,7 @@
 
 <template>
     <div class="qr">
-        <div ref="svg" class="svg"></div>
+        <div ref="svg" :class="size"></div>
         <span v-if="label">{{ label }}</span>
     </div>
 </template>
@@ -16,9 +16,19 @@
     padding: 1rem;
 }
 
-.svg {
+.small {
+    width: 32px;
+    height: 32px;
+}
+
+.medium {
     width: 64px;
     height: 64px;
+}
+
+.large {
+    width: 128px;
+    height: 128px;
 }
 </style>
 
@@ -26,11 +36,16 @@
 import { onMounted, useTemplateRef } from 'vue'
 import { encodeQR } from 'qr'
 
-const { label, text } = defineProps({
+const { label, text, size } = defineProps({
 
     label: {
         type: String,
         default: null,
+    },
+
+    size: {
+        type: String,
+        default: 'medium',
     },
 
     text: {
