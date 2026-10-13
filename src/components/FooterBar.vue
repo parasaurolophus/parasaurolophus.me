@@ -12,7 +12,7 @@
     display: none;
 }
 
-@media (width >= 1200px) {
+@media (width >=1200px) {
     .undecidable {
         display: inline;
     }
@@ -20,6 +20,6 @@
 </style>
 
 <script setup>
-import CopyrightNotice from '@/components/CopyrightNotice.vue'
-import UndecidableLink from '@/components/UndecidableLink.vue'
+import CopyrightNotice from './CopyrightNotice.vue'
+import UndecidableLink from './UndecidableLink.vue'
 </script>

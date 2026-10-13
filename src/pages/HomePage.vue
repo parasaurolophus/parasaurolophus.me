@@ -34,17 +34,20 @@
 
     <hr>
 
-    <div class="links">
-        <details v-for="link in links" name="links">
-            <summary>
-                {{ link.label }}
-            </summary>
-            <a v-if="link.href" :href="link.href" target="_blank">
-                <QrCode :text="link.href" :label="link.href" size="large" />
-            </a>
-            <QrCode v-else :text="link.text" />
-        </details>
-    </div>
+    <details v-for="link in links" name="sections">
+        <summary>
+            {{ link.label }}
+        </summary>
+        <a v-if="link.href" :href="link.href" target="_blank">
+            <QrCode :text="link.href" :label="link.href" size="large" />
+        </a>
+        <QrCode v-else :text="link.text" />
+    </details>
+
+    <details name="sections">
+        <summary>QR Code Generator</summary>
+        <QrGenerator />
+    </details>
 
 </template>
 
@@ -56,12 +59,13 @@
 </style>
 
 <script setup>
-import CodeBlock from '@/components/CodeBlock.vue'
-import NaturalsSet from '@/components/NaturalsSet.vue'
-import QrCode from '@/components/QrCode.vue'
-import RussellParadox from '@/components/RussellParadox.vue'
-import UndecidableLink from '@/components/UndecidableLink.vue'
-import YCombinator from '@/components/YCombinator.vue'
+import CodeBlock from '../components/CodeBlock.vue'
+import NaturalsSet from '../components/NaturalsSet.vue'
+import QrCode from '../components/QrCode.vue'
+import QrGenerator from '../components/QrGenerator.vue'
+import RussellParadox from '../components/RussellParadox.vue'
+import UndecidableLink from '../components/UndecidableLink.vue'
+import YCombinator from '../components/YCombinator.vue'
 import { onMounted, onUnmounted, ref } from 'vue'
 
 const factorial = ref(`(let factorial ((a 1)

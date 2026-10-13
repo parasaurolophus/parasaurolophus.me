@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import OmegaFormula from '@/components/OmegaFormula.vue'
+import OmegaFormula from './OmegaFormula.vue'
 
 const { table } = defineProps({
 

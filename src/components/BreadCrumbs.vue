@@ -28,10 +28,10 @@
 </style>
 
 <script setup>
+import MdiIcon from './MdiIcon.vue'
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { mdiPlay } from '@mdi/js'
-import MdiIcon from '@/components/MdiIcon.vue'
 
 const route = useRoute()
 const router = useRouter()

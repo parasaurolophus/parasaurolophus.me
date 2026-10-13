@@ -30,9 +30,9 @@
 </style>
 
 <script setup>
-import BreadCrumbs from '@/components/BreadCrumbs.vue'
-import MdiButton from '@/components/MdiButton.vue'
-import QrCode from '@/components/QrCode.vue'
+import BreadCrumbs from '../components/BreadCrumbs.vue'
+import MdiButton from '../components/MdiButton.vue'
+import QrCode from '../components/QrCode.vue'
 import { mdiThemeLightDark } from '@mdi/js'
 import { computed } from 'vue'
 

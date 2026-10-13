@@ -11,7 +11,7 @@
 </style>
 
 <script setup>
-import MdiIcon from '@/components/MdiIcon.vue'
+import MdiIcon from './MdiIcon.vue'
 
 const { path } = defineProps({
 
