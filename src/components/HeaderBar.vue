@@ -21,7 +21,7 @@
     font-weight: bold;
 }
 
-@media (width >= 1200px) {
+@media (width >=1200px) {
 
     .title {
         font-size: x-large;
@@ -35,8 +35,10 @@ import MdiButton from '../components/MdiButton.vue'
 import QrCode from '../components/QrCode.vue'
 import { mdiThemeLightDark } from '@mdi/js'
 import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 
-const url = computed(() => window.location.href)
+const route = useRoute()
+const url = computed(() => new URL(route.path, window.location).href)
 
 function toggleTheme() {
 
