@@ -157,7 +157,7 @@ main {
     padding: 1rem;
 }
 
-@media (width >= 1200px) {
+@media (width >=1200px) {
 
     main {
         flex-flow: row nowrap;
@@ -184,6 +184,11 @@ svg line {
 svg text {
     font-family: 'Latin Modern Math';
     font-size: 1rem;
+}
+
+textarea {
+    background-color: var(--highlight);
+    color: var(--foreground);
 }
 
 td,

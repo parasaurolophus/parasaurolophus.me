@@ -1,15 +1,20 @@
 <!-- Copyright (c) 2026 Kirk Rader -->
 
 <template>
-    <textarea v-model="text" cols="40" rows="15"></textarea>
-    <div ref="svg" class="qr"></div>
+    <div>
+        <textarea v-model="text" cols="40" rows="9" spellcheck="false" class="text"></textarea>
+        <div ref="svg" class="qr"></div>
+    </div>
 </template>
 
 <style scoped>
+.text {
+    margin: 2rex 0 1rex 0;
+}
+
 .qr {
     width: 128px;
     height: 128px;
-    margin-top: 1rex;
 }
 </style>
 
