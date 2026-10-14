@@ -33,10 +33,10 @@
 </style>
 
 <script setup>
-import { onMounted, useTemplateRef } from 'vue'
+import { onMounted, useTemplateRef, watch } from 'vue'
 import { encodeQR } from 'qr'
 
-const { label, text, size } = defineProps({
+const { label, size } = defineProps({
 
     label: {
         type: String,
@@ -47,19 +47,16 @@ const { label, text, size } = defineProps({
         type: String,
         default: 'medium',
     },
-
-    text: {
-        type: String,
-        required: true,
-    },
 })
 
 const svg = useTemplateRef('svg')
+const text = defineModel()
 
 function updateSvg() {
 
-    svg.value.innerHTML = encodeQR(text, 'svg')
+    svg.value.innerHTML = encodeQR(text.value, 'svg')
 }
 
 onMounted(updateSvg)
+watch(text, updateSvg)
 </script>

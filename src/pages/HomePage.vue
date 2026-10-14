@@ -39,9 +39,9 @@
             {{ link.label }}
         </summary>
         <a v-if="link.href" :href="link.href" target="_blank">
-            <QrCode :text="link.href" :label="link.href" size="large" />
+            <QrCode v-model="link.href" :label="link.href" size="large" />
         </a>
-        <QrCode v-else :text="link.text" />
+        <QrCode v-else v-model="link.text" />
     </details>
 
     <details name="sections">

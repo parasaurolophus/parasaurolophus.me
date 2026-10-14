@@ -2,7 +2,7 @@
 
 <template>
     <header>
-        <QrCode :text="url" />
+        <QrCode v-model="url" />
         <div>
             <div class="title">parasaurolophus</div>
             <BreadCrumbs />
