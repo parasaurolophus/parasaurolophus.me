@@ -2,37 +2,9 @@
 
 <template>
 
-    <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/NaturalsSet.vue"
-        target="_blank">
-        <NaturalsSet />
-    </a>
-
-    <hr>
-
-    <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/RussellParadox.vue"
-        target="_blank">
-        <RussellParadox />
-    </a>
-
-    <hr>
-
-    <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/YCombinator.vue"
-        target="_blank">
-        <YCombinator />
-    </a>
-
-    <hr>
-
-    <template v-if="mobile">
-        <div class="undecidable">
-            <UndecidableLink :table="true" />
-        </div>
-        <hr>
-    </template>
-
-    <CodeBlock v-model="factorial" />
-
-    <hr>
+    <NaturalsSet name="sections" />
+    <RussellParadox name="sections" />
+    <YCombinator name="sections" />
 
     <details v-for="link in links" name="sections">
         <summary>
@@ -48,6 +20,20 @@
         <summary>QR Code Generator</summary>
         <QrGenerator />
     </details>
+
+    <hr>
+
+    <CodeBlock v-model="factorial" />
+
+    <template v-if="mobile">
+
+        <hr>
+
+        <div class="undecidable">
+            <UndecidableLink :table="true" />
+        </div>
+
+    </template>
 
 </template>
 

@@ -1,69 +1,81 @@
 <!-- Copyright (c) 2026 Kirk Rader -->
 
 <template>
-    <math display="block">
-        <component :is="mobile ? 'mtable' : 'mrow'">
-            <component :is="mobile ? 'mtr' : 'mrow'">
-                <component :is="mobile ? 'mtd' : 'mrow'">
-                    <mrow>
-                        <mi>Y</mi>
-                        <mi>f</mi>
-                    </mrow>
-                    <mo>&equiv;</mo>
-                    <mrow>
-                        <mi>f</mi>
-                        <mo>(</mo>
-                        <mi>Y</mi>
-                        <mi>f</mi>
-                        <mo>)</mo>
-                    </mrow>
+    <FetchSource :url="url" :language="html" :name="name">
+        <math :display="mobile ? 'block' : 'inline'">
+            <component :is="mobile ? 'mtable' : 'mrow'">
+                <component :is="mobile ? 'mtr' : 'mrow'">
+                    <component :is="mobile ? 'mtd' : 'mrow'">
+                        <mrow>
+                            <mi>Y</mi>
+                            <mi>f</mi>
+                        </mrow>
+                        <mo>&equiv;</mo>
+                        <mrow>
+                            <mi>f</mi>
+                            <mo>(</mo>
+                            <mi>Y</mi>
+                            <mi>f</mi>
+                            <mo>)</mo>
+                        </mrow>
+                    </component>
                 </component>
-            </component>
-            <template v-if="mobile">
+                <template v-if="mobile">
+                    <mtr>
+                        <mtd>
+                            <mtext>where</mtext>
+                        </mtd>
+                    </mtr>
+                </template>
                 <mtr>
                     <mtd>
-                        <mtext>where</mtext>
-                    </mtd>
-                </mtr>
-            </template>
-            <mtr>
-                <mtd>
-                    <template v-if="!mobile">
-                        <mtext>where</mtext>
-                        <mspace width="0.5em" />
-                    </template>
-                    <mi>Y</mi>
-                    <mo>=</mo>
-                    <mrow>
-                        <mo>&lambda;</mo>
-                        <mi>y</mi>
-                        <mo>.</mo>
-                        <template v-for="count in 2">
-                            <mrow>
-                                <mo>(</mo>
-                                <mo>&lambda;</mo>
-                                <mi>x</mi>
-                                <mo>.</mo>
+                        <template v-if="!mobile">
+                            <mtext>where</mtext>
+                            <mspace width="0.5em" />
+                        </template>
+                        <mi>Y</mi>
+                        <mo>=</mo>
+                        <mrow>
+                            <mo>&lambda;</mo>
+                            <mi>y</mi>
+                            <mo>.</mo>
+                            <template v-for="count in 2">
                                 <mrow>
-                                    <mi>y</mi>
                                     <mo>(</mo>
+                                    <mo>&lambda;</mo>
                                     <mi>x</mi>
-                                    <mspace width="0.5em" />
-                                    <mi>x</mi>
+                                    <mo>.</mo>
+                                    <mrow>
+                                        <mi>y</mi>
+                                        <mo>(</mo>
+                                        <mi>x</mi>
+                                        <mspace width="0.5em" />
+                                        <mi>x</mi>
+                                        <mo>)</mo>
+                                    </mrow>
                                     <mo>)</mo>
                                 </mrow>
-                                <mo>)</mo>
-                            </mrow>
-                        </template>
-                    </mrow>
-                </mtd>
-            </mtr>
-        </component>
-    </math>
+                            </template>
+                        </mrow>
+                    </mtd>
+                </mtr>
+            </component>
+        </math>
+    </FetchSource>
 </template>
 
 <script setup>
+import FetchSource from './FetchSource.vue'
 import { inject } from 'vue'
 
 const mobile = inject('mobile')
+const { name } = defineProps({
+
+    name: {
+        type: String,
+        required: false,
+    },
+})
+
+const url = 'https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/YCombinator.vue'
 </script>
