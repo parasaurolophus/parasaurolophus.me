@@ -63,5 +63,7 @@
 </template>
 
 <script setup>
-const mobile = defineModel()
+import { inject } from 'vue'
+
+const mobile = inject('mobile')
 </script>

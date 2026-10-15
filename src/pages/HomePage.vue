@@ -4,21 +4,21 @@
 
     <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/NaturalsSet.vue"
         target="_blank">
-        <NaturalsSet v-model="mobile" />
+        <NaturalsSet />
     </a>
 
     <hr>
 
     <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/RussellParadox.vue"
         target="_blank">
-        <RussellParadox v-model="mobile" />
+        <RussellParadox />
     </a>
 
     <hr>
 
     <a href="https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/YCombinator.vue"
         target="_blank">
-        <YCombinator v-model="mobile" />
+        <YCombinator />
     </a>
 
     <hr>
@@ -66,7 +66,7 @@ import QrGenerator from '../components/QrGenerator.vue'
 import RussellParadox from '../components/RussellParadox.vue'
 import UndecidableLink from '../components/UndecidableLink.vue'
 import YCombinator from '../components/YCombinator.vue'
-import { onMounted, onUnmounted, ref } from 'vue'
+import { inject, ref } from 'vue'
 
 const factorial = ref(`(let factorial ((a 1)
                 (n 10000))
@@ -74,7 +74,7 @@ const factorial = ref(`(let factorial ((a 1)
         a
         (factorial (* a n) (- n 1))))`)
 
-const mobile = ref(false)
+const mobile = inject('mobile')
 
 const links = [
     {
@@ -90,20 +90,4 @@ const links = [
         label: 'GitHub',
     },
 ]
-
-let mediaQuery = null
-
-function updateMobile(query) {
-
-    mobile.value = query.matches
-}
-
-onMounted(() => {
-
-    mediaQuery = window.matchMedia('(width < 1200px)')
-    mediaQuery.addEventListener('change', updateMobile)
-    updateMobile(mediaQuery)
-})
-
-onUnmounted(() => mediaQuery.removeEventListener('change', updateMobile))
 </script>
