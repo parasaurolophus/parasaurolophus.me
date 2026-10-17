@@ -1,7 +1,7 @@
 <!-- Copyright (c) 2026 Kirk Rader -->
 
 <template>
-    <FetchSource :url="url" :language="html" :name="name">
+    <XmlExample>
         <math :display="mobile ? 'block' : 'inline'">
             <component :is="mobile ? 'mtable' : 'mrow'">
                 <component :is="mobile ? 'mtr' : 'mrow'">
@@ -88,22 +88,12 @@
                 </mtr>
             </component>
         </math>
-    </FetchSource>
+    </XmlExample>
 </template>
 
 <script setup>
-import FetchSource from './FetchSource.vue'
+import XmlExample from './XmlExample.vue'
 import { inject } from 'vue'
 
 const mobile = inject('mobile')
-
-const { name } = defineProps({
-
-    name: {
-        type: String,
-        required: false,
-    },
-})
-
-const url = 'https://raw.githubusercontent.com/parasaurolophus/parasaurolophus.me/refs/heads/main/src/components/NaturalsSet.vue'
 </script>

@@ -3,7 +3,7 @@
 <template>
     <div class="container">
         <template v-for="(destination, index) of path">
-            <MdiIcon v-if="index > 0" :path="mdiPlay" class="separator" />
+            <span v-if="index > 0" class="separator">▶</span>
             <span v-if="destination.to === null" class="label">{{ destination.title }}</span>
             <RouterLink v-else :to="destination.to">{{ destination.title }}</RouterLink>
         </template>
@@ -28,10 +28,8 @@
 </style>
 
 <script setup>
-import MdiIcon from './MdiIcon.vue'
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { mdiPlay } from '@mdi/js'
 
 const route = useRoute()
 const router = useRouter()

@@ -2,9 +2,9 @@
 
 <template>
 
-    <NaturalsSet name="sections" />
-    <RussellParadox name="sections" />
-    <YCombinator name="sections" />
+    <RouteTree/>
+
+    <hr>
 
     <details v-for="link in links" name="sections">
         <summary>
@@ -49,6 +49,7 @@ import CodeBlock from '../components/CodeBlock.vue'
 import NaturalsSet from '../components/NaturalsSet.vue'
 import QrCode from '../components/QrCode.vue'
 import QrGenerator from '../components/QrGenerator.vue'
+import RouteTree from '../components/RouteTree.js'
 import RussellParadox from '../components/RussellParadox.vue'
 import UndecidableLink from '../components/UndecidableLink.vue'
 import YCombinator from '../components/YCombinator.vue'
