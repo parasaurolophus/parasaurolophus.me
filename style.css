@@ -28,49 +28,49 @@
 .dark-theme {
 
     /* base colors */
-    --foreground: rgb(224 224 224);
-    --background: rgb(32 32 32);
-    --highlight: hsl(from var(--background) h s calc(l + 10));
+    --foreground-color: rgb(224 224 224);
+    --background-color: rgb(32 32 32);
+    --highlight-color: hsl(from var(--background-color) h s calc(l + 10));
 
     /* semantic colors */
-    --success: lightgreen;
-    --warning: yellow;
-    --failure: red;
+    --success-color: lightgreen;
+    --warning-color: yellow;
+    --failure-color: red;
 
     /* accent colors */
-    --primary: cyan;
-    --secondary: magenta;
+    --primary-color: cyan;
+    --secondary-color: magenta;
 }
 
 .light-theme {
 
     /* base colors */
-    --background: rgb(224 224 224);
-    --foreground: rgb(32 32 32);
-    --highlight: hsl(from var(--background) h s calc(l - 10));
+    --background-color: rgb(224 224 224);
+    --foreground-color: rgb(32 32 32);
+    --highlight-color: hsl(from var(--background-color) h s calc(l - 10));
 
     /* semantic colors */
-    --success: green;
-    --warning: goldenrod;
-    --failure: darkred;
+    --success-color: green;
+    --warning-color: goldenrod;
+    --failure-color: darkred;
 
     /* accent colors */
-    --primary: blue;
-    --secondary: purple;
+    --primary-color: blue;
+    --secondary-color: purple;
 }
 
 * {
     border-width: 1px;
-    border-color: var(--foreground);
+    border-color: var(--foreground-color);
 }
 
 a {
-    color: var(--primary);
+    color: var(--primary-color);
     text-decoration: none;
 }
 
 a:visited {
-    color: var(--secondary);
+    color: var(--secondary-color);
 }
 
 a:active,
@@ -88,8 +88,8 @@ blockquote em {
 }
 
 body {
-    background-color: var(--background);
-    color: var(--foreground);
+    background-color: var(--background-color);
+    color: var(--foreground-color);
     font-family: 'Noto Sans Mono', monospace;
 }
 
@@ -107,8 +107,8 @@ code {
 }
 
 dialog {
-    color: var(--foreground);
-    background-color: var(--background);
+    color: var(--foreground-color);
+    background-color: var(--background-color);
     border-style: solid;
 }
 
@@ -141,7 +141,7 @@ header {
 }
 
 input {
-    accent-color: var(--primary);
+    accent-color: var(--primary-color);
 }
 
 main {
@@ -173,11 +173,11 @@ summary {
 }
 
 svg {
-    fill: var(--foreground);
+    fill: var(--foreground-color);
 }
 
 svg line {
-    stroke: var(--foreground);
+    stroke: var(--foreground-color);
     stroke-width: 4;
 }
 
@@ -187,8 +187,8 @@ svg text {
 }
 
 textarea {
-    background-color: var(--highlight);
-    color: var(--foreground);
+    background-color: var(--highlight-color);
+    color: var(--foreground-color);
 }
 
 td,
@@ -198,5 +198,5 @@ th {
 
 thead tr,
 tbody tr:nth-child(even) {
-    background-color: var(--highlight);
+    background-color: var(--highlight-color);
 }

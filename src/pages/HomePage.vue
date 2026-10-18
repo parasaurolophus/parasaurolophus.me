@@ -18,8 +18,6 @@
 
     <hr>
 
-    <CodeBlock v-model="factorial" />
-
     <template v-if="mobile">
 
         <hr>
@@ -40,21 +38,10 @@
 </style>
 
 <script setup>
-import CodeBlock from '../components/CodeBlock.vue'
-import NaturalsSet from '../components/NaturalsSet.vue'
 import QrCode from '../components/QrCode.vue'
-import QrGenerator from '../components/QrGenerator.vue'
 import RouteTree from '../components/RouteTree.js'
-import RussellParadox from '../components/RussellParadox.vue'
 import UndecidableLink from '../components/UndecidableLink.vue'
-import YCombinator from '../components/YCombinator.vue'
-import { inject, ref } from 'vue'
-
-const factorial = ref(`(let factorial ((a 1)
-                (n 10000))
-    (if (< n 2)
-        a
-        (factorial (* a n) (- n 1))))`)
+import { inject } from 'vue'
 
 const mobile = inject('mobile')
 
