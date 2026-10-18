@@ -1,23 +1,16 @@
 <!-- Copyright (c) Kirk Rader -->
 
 <template>
-    <div>
-        <div ref="source" class="source">
+    <details>
+        <summary ref="source">
             <slot></slot>
-        </div>
-        <highlightjs :code="xml" language="xml" @click.stop.prevent="copy" class="xml copyable" />
+        </summary>
+        <highlightjs :code="xml" language="xml" @click.stop.prevent="copy" class="copyable" />
         <dialog ref="copied" popover closedby="any" @click.stop.prevent="closeDialog">
             Copied
         </dialog>
-    </div>
+    </details>
 </template>
-
-<style scoped>
-.source {
-    border-style: solid;
-    padding: 1rem;
-}
-</style>
 
 <script setup>
 import { inject, onMounted, ref, useTemplateRef, watch } from 'vue'

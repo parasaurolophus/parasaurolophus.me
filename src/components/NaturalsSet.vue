@@ -2,10 +2,10 @@
 
 <template>
     <XmlExample>
-        <math :display="mobile ? 'block' : 'inline'">
-            <component :is="mobile ? 'mtable' : 'mrow'">
-                <component :is="mobile ? 'mtr' : 'mrow'">
-                    <component :is="mobile ? 'mtd' : 'mrow'">
+        <math display="block">
+            <mtable>
+                <mtr>
+                    <mtd>
                         <mrow>
                             <mo>|</mo>
                             <mi>&naturals;</mi>
@@ -16,21 +16,15 @@
                             <mi>&aleph;</mi>
                             <mi>0</mi>
                         </msub>
-                    </component>
-                </component>
-                <template v-if="mobile">
-                    <mtr>
-                        <mtd>
-                            <mtext>where</mtext>
-                        </mtd>
-                    </mtr>
-                </template>
+                    </mtd>
+                </mtr>
                 <mtr>
                     <mtd>
-                        <template v-if="!mobile">
-                            <mtext>where</mtext>
-                            <mspace width="0.5em" />
-                        </template>
+                        <mtext>where</mtext>
+                    </mtd>
+                </mtr>
+                <mtr>
+                    <mtd>
                         <mi>&naturals;</mi>
                         <mo>=</mo>
                         <mrow>
@@ -38,9 +32,9 @@
                             <mi>n</mi>
                             <mo>:</mo>
                             <mo v-if="mobile">(</mo>
-                            <component :is="mobile ? 'mtable' : 'mrow'">
-                                <component :is="mobile ? 'mtr' : 'mrow'">
-                                    <component :is="mobile ? 'mtd' : 'mrow'">
+                            <mtable>
+                                <mtr>
+                                    <mtd>
                                         <mrow>
                                             <mo>(</mo>
                                             <mi>n</mi>
@@ -49,10 +43,10 @@
                                             <mo>)</mo>
                                         </mrow>
                                         <mo>&or;</mo>
-                                    </component>
-                                </component>
-                                <component :is="'mtr'">
-                                    <component :is="'mtd'">
+                                    </mtd>
+                                </mtr>
+                                <mtr>
+                                    <mtd>
                                         <mrow>
                                             <mo>&exist;</mo>
                                             <mi>m</mi>
@@ -78,15 +72,15 @@
                                                 </mrow>
                                             </mrow>
                                         </mrow>
-                                    </component>
-                                </component>
-                            </component>
+                                    </mtd>
+                                </mtr>
+                            </mtable>
                             <mo v-if="mobile">)</mo>
                             <mo>}</mo>
                         </mrow>
                     </mtd>
                 </mtr>
-            </component>
+            </mtable>
         </math>
     </XmlExample>
 </template>

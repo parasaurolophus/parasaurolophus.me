@@ -2,10 +2,10 @@
 
 <template>
     <XmlExample>
-        <math :display="mobile ? 'block' : 'inline'">
-            <component :is="mobile ? 'mtable' : 'mrow'">
-                <component :is="mobile ? 'mtr' : 'mrow'">
-                    <component :is="mobile ? 'mtd' : 'mrow'">
+        <math display="block">
+            <mtable>
+                <mtr>
+                    <mtd>
                         <mrow>
                             <mi>Y</mi>
                             <mi>f</mi>
@@ -18,21 +18,15 @@
                             <mi>f</mi>
                             <mo>)</mo>
                         </mrow>
-                    </component>
-                </component>
-                <template v-if="mobile">
-                    <mtr>
-                        <mtd>
-                            <mtext>where</mtext>
-                        </mtd>
-                    </mtr>
-                </template>
+                    </mtd>
+                </mtr>
                 <mtr>
                     <mtd>
-                        <template v-if="!mobile">
-                            <mtext>where</mtext>
-                            <mspace width="0.5em" />
-                        </template>
+                        <mtext>where</mtext>
+                    </mtd>
+                </mtr>
+                <mtr>
+                    <mtd>
                         <mi>Y</mi>
                         <mo>=</mo>
                         <mrow>
@@ -59,7 +53,7 @@
                         </mrow>
                     </mtd>
                 </mtr>
-            </component>
+            </mtable>
         </math>
     </XmlExample>
 </template>

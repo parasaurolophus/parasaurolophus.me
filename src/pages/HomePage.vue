@@ -16,11 +16,6 @@
         <QrCode v-else v-model="link.text" />
     </details>
 
-    <details name="sections">
-        <summary>QR Code Generator</summary>
-        <QrGenerator />
-    </details>
-
     <hr>
 
     <CodeBlock v-model="factorial" />

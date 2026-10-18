@@ -1,11 +1,18 @@
 <!-- Copyright (c) 2026 Kirk Rader -->
 
 <template>
+    <p>
+        As shown by Bertrand Russell, the <i>comprehension theorem</i> of
+        Gottlob Frege's "naive" Set Theory leads to self-contradiction. For
+        example, there is no such thing as the set of all sets that are not
+        members of themselves since such a set would have to both be a member of
+        itself and not a member of itself:
+    </p>
     <XmlExample>
-        <math :display="mobile ? 'block' : 'inline'">
-            <component :is="mobile ? 'mtable' : 'mrow'">
-                <component :is="mobile ? 'mtr' : 'mrow'">
-                    <component :is="mobile ? 'mtd' : 'mrow'">
+        <math display="block">
+            <mtable>
+                <mtr>
+                    <mtd>
                         <mrow>
                             <mi>S</mi>
                             <mi>&in;</mi>
@@ -17,8 +24,8 @@
                             <mi>&notin;</mi>
                             <mi>S</mi>
                         </mrow>
-                    </component>
-                </component>
+                    </mtd>
+                </mtr>
                 <mtr>
                     <mtd>
                         <mtext>where</mtext>
@@ -38,7 +45,7 @@
                         </mrow>
                     </mtd>
                 </mtr>
-            </component>
+            </mtable>
         </math>
     </XmlExample>
 </template>

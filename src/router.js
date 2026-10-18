@@ -51,6 +51,15 @@ const router = createRouter({
         },
 
         {
+            path: '/qrgenerator',
+            name: 'qrgenerator',
+            component: () => import('./pages/QrGeneratorPage.vue'),
+            meta: {
+                title: 'QR Generator',
+            },
+        },
+
+        {
             path: '/:pathMatch(.*)*',
             name: 'catchall',
             component: () => import('./pages/CatchAll.vue'),
