@@ -25,8 +25,8 @@ button {
     justify-content: start;
 }
 
-.rendered {
-    margin-top: 1rem;
+textarea {
+    margin: 1rem 0;
 }
 </style>
 
@@ -35,49 +35,11 @@ import { onMounted, ref, useTemplateRef, watch } from 'vue'
 
 const rendered = useTemplateRef('rendered')
 const source = ref(`<math display="block">
-    <mrow>
-        <mrow>
-            <munder>
-                <mo>lim</mo>
-                <mrow>
-                    <mi>n</mi>
-                    <mo>&rarr;</mo>
-                    <mn>&infin;</mo>
-                </mrow>
-            </munder>
-            <mo>(</mo>
-                <mfrac>
-                    <mn>1</mn>
-                    <mi>n</mn>
-                </mfrac>
-            <mo>)</mo>
-        </mrow>
-        <mo>=</mo>
-        <mn>0</mn>
-    </mrow>
-    <mpadded width="2em" lspace="0.75em">
-        <mo>&equiv;</mo>
-    </mpadded>
-    <mrow>
-        <mrow>
-            <munder>
-                <mo>lim</mo>
-                <mrow>
-                    <mi>n</mi>
-                    <mo>&rarr;</mo>
-                    <mn>0</mo>
-                </mrow>
-            </munder>
-            <mo>(</mo>
-                <mfrac>
-                    <mn>1</mn>
-                    <mi>n</mn>
-                </mfrac>
-            <mo>)</mo>
-        </mrow>
-        <mo>=</mo>
-        <mn>&infin;</mn>
-    </mrow>
+    <mn>2</mn>
+    <mo>+</mo>
+    <mn>2</mn>
+    <mo>=</mo>
+    <mn>4</mn>
 </math>`)
 
 const presets = [
@@ -131,7 +93,7 @@ const presets = [
             <munder>
                 <mo>lim</mo>
                 <mrow>
-                    <mi>n</mi>
+                    <mi>x</mi>
                     <mo>&rarr;</mo>
                     <mn>&infin;</mo>
                 </mrow>
@@ -139,7 +101,7 @@ const presets = [
             <mo>(</mo>
                 <mfrac>
                     <mn>1</mn>
-                    <mi>n</mn>
+                    <mi>x</mn>
                 </mfrac>
             <mo>)</mo>
         </mrow>
@@ -154,7 +116,7 @@ const presets = [
             <munder>
                 <mo>lim</mo>
                 <mrow>
-                    <mi>n</mi>
+                    <mi>x</mi>
                     <mo>&rarr;</mo>
                     <mn>0</mo>
                 </mrow>
@@ -162,7 +124,7 @@ const presets = [
             <mo>(</mo>
                 <mfrac>
                     <mn>1</mn>
-                    <mi>n</mn>
+                    <mi>x</mn>
                 </mfrac>
             <mo>)</mo>
         </mrow>
