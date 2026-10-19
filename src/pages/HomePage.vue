@@ -16,8 +16,6 @@
         <QrCode v-else v-model="link.text" />
     </details>
 
-    <hr>
-
     <template v-if="mobile">
 
         <hr>

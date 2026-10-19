@@ -26,7 +26,7 @@ button {
 }
 
 .text {
-    margin: 2rex 0 1rex 0;
+    margin: 1rex 0;
 }
 
 .qr {

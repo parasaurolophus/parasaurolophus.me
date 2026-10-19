@@ -24,33 +24,6 @@ const router = createRouter({
         },
 
         {
-            path: '/mathml/naturals',
-            name: 'naturals',
-            component: () => import('./pages/NaturalsPage.vue'),
-            meta: {
-                title: 'ℕ',
-            },
-        },
-
-        {
-            path: '/mathml/russell',
-            name: 'russell',
-            component: () => import('./pages/RussellParadoxPage.vue'),
-            meta: {
-                title: "Russell's Paradox",
-            },
-        },
-
-        {
-            path: '/mathml/ycombinator',
-            name: 'ycombinator',
-            component: () => import('./pages/YCombinatorPage.vue'),
-            meta: {
-                title: "Y Combinator",
-            },
-        },
-
-        {
             path: '/qrgenerator',
             name: 'qrgenerator',
             component: () => import('./pages/QrGeneratorPage.vue'),
