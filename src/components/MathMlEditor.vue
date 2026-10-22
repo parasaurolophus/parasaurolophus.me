@@ -1,32 +1,69 @@
 <!-- Copyright (c) 2026 Kirk Rader -->
 
 <template>
-    <div>
-        <div class="presets">
-            <button v-for="preset of presets" :key="preset.title" @click="populatePreset(preset.text)">
-                {{ preset.label }}
-            </button>
+    <div class="container">
+        <div class="controls">
+            <div class="source">
+                <textarea v-model="source" cols="40" rows="20" spellcheck="false" wrap="0"></textarea>
+            </div>
+            <div class="presets">
+                <button v-for="preset of presets" :key="preset.title" @click="populatePreset(preset.text)">
+                    {{ preset.label }}
+                </button>
+            </div>
         </div>
-        <div>
-            <textarea v-model="source" cols="40" rows="20" spellcheck="false"></textarea>
-        </div>
+        <hr class="separator">
         <div ref="rendered" class="rendered"></div>
     </div>
 </template>
 
 <style scoped>
-button {
-    margin: 0.25rem;
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.controls {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: min-content;
 }
 
 .presets {
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
-    justify-content: start;
+    justify-content: space-around;
+}
+
+.presets>* {
+    margin: 0.25rem;
+}
+
+.rendered {
+    margin: 1rem;
+}
+
+.separator {
+    display: initial;
+    width: 100%;
 }
 
 textarea {
-    margin: 1rem 0;
+    white-space: pre;
+}
+
+@media (width >=1200px) {
+
+    .container {
+        flex-flow: row nowrap;
+    }
+
+    .separator {
+        display: none;
+    }
 }
 </style>
 
