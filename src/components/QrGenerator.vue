@@ -41,23 +41,14 @@ import { encodeQR } from 'qr'
 
 const svg = useTemplateRef('svg')
 
-const text = ref(`BEGIN:VCARD
-VERSION:4.0
-KIND:individual
-N:;parasaurolophus;;;
-EMAIL:info@parasaurolophus.art
-URL:https://www.parasaurolophus.art
-URL:https://github.com/parasaurolophus
-URL:https://hyperfollow.com/kirkrader
-END:VCARD`)
-
 const presets = [
     {
         label: 'parasaurolophus',
         text: `BEGIN:VCARD
 VERSION:4.0
 KIND:individual
-N:;parasaurolophus;;;
+FN:parasaurolophus
+N:;parasaurolophus
 EMAIL:info@parasaurolophus.art
 URL:https://www.parasaurolophus.art
 URL:https://github.com/parasaurolophus
@@ -70,11 +61,15 @@ END:VCARD`,
 VERSION:4.0
 KIND:org
 ORG;CHARSET=UTF-8:M²VP
+FN;CHARSET=UTF-8:Monona•McFarland Voters for Progress
+N;CHARSET=UTF-8:Monona•McFarland Voters for Progress
 EMAIL:info@m2vp.org
 URL:https://m2vp.org
 END:VCARD`,
     },
 ]
+
+const text = ref(presets[0].text)
 
 function populatePreset(txt) {
 
