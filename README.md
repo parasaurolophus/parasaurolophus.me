@@ -1,38 +1,70 @@
+Copyright &copy; 2026 Kirk Rader
+
 # parasaurolophus.me
 
-This template should help get you started developing with Vue 3 in Vite.
+## Dependencies / Attributions
 
-## Recommended IDE Setup
+_See [./package-lock.json](./package-lock.json) for the complete set of
+transitive dependencies._
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+* [NodeJS]
+* [@highlightjs/vue-plugin]
+* [@mdi/js]
+* [highlight.js]
+* [qr]
+* [vue]
+* [vue-router]
+* [xml-formatter]
 
-## Recommended Browser Setup
+## Installation
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+Assuming [git] and [NodeJS] are properly installed and configured:
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```bash
+git clone https://github.com/parasaurolophus/parasaurolophus.me.git
+cd parasaurolophus.me
+npm i
 ```
 
-### Compile and Hot-Reload for Development
+If you have a properly installed SSH key in [GitHub] you may, of course, use the
+following, instead:
 
-```sh
+```bash
+git clone git@github.com:parasaurolophus/parasaurolophus.me.git
+cd parasaurolophus.me
+npm i
+```
+
+## Development and Testing
+
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+...then open the URL displayed in the console in a web browser.
 
-```sh
+## Building and Deployment
+
+```bash
 npm run build
 ```
+
+...then copy the contents of the `./dist` directory to the web root directory of a web server running [Apache].
+
+_Note that the only dependency on [Apache] is the
+[./public/.htaccess](./public/.htaccess) file. To port to a different web server
+software stack, replace that file with the corresponding configuration for the
+target software. The requirement is to redirect 404 errors back to
+[./index.html](./index.html) for use by [vue-router]._
+
+[Apache]: https://httpd.apache.org/
+[git]: https://git-scm.com/
+[GitHub]: https://github.com/
+[NodeJS]: https://nodejs.org/en
+[@highlightjs/vue-plugin]: https://www.npmjs.com/package/@highlightjs/vue-plugin
+[@mdi/js]: https://www.npmjs.com/package/@mdi/js
+[highlight.js]: https://highlightjs.org
+[qr]: https://www.npmjs.com/package/qr
+[vue]: https://vuejs.org/
+[vue-router]: https://router.vuejs.org/
+[xml-formatter]: https://www.npmjs.com/package/xml-formatter
