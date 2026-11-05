@@ -36,24 +36,16 @@ button {
 </style>
 
 <script setup>
-import { onMounted, ref, useTemplateRef, watch } from 'vue'
+import { inject, onMounted, ref, useTemplateRef, watch } from 'vue'
 import { encodeQR } from 'qr'
 
 const svg = useTemplateRef('svg')
+const vcard = inject('vcard')
 
 const presets = [
     {
         label: 'parasaurolophus',
-        text: `BEGIN:VCARD
-VERSION:4.0
-KIND:individual
-FN:parasaurolophus
-N:;parasaurolophus
-EMAIL:info@parasaurolophus.art
-URL:https://www.parasaurolophus.art
-URL:https://github.com/parasaurolophus
-URL:https://hyperfollow.com/kirkrader
-END:VCARD`,
+        text: vcard.value,
     },
     {
         label: 'M²VP',

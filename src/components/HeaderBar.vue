@@ -34,7 +34,7 @@ import BreadCrumbs from '../components/BreadCrumbs.vue'
 import MdiButton from '../components/MdiButton.vue'
 import QrCode from '../components/QrCode.vue'
 import { mdiThemeLightDark } from '@mdi/js'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -44,29 +44,35 @@ function toggleTheme() {
 
     const body = document.getElementsByTagName('body')[0]
     const classes = body.classList
+    const oldTheme = classes.contains('dark-theme') ? 'dark-theme' : 'light-theme'
+    const newTheme = oldTheme === 'dark-theme' ? 'light-theme' : 'dark-theme'
 
-    for (let index = 0; index < classes.length; ++index) {
+    classes.replace(oldTheme, newTheme)
 
-        const cls = classes.item(index)
+    try {
 
-        if (cls === 'dark-theme') {
+        window.localStorage.setItem('theme', newTheme)
 
-            classes.remove('dark-theme')
-            classes.add('light-theme')
-            body.classList = classes
-            return
-        }
+    } catch (error) {
 
-        if (cls === 'light-theme') {
-
-            classes.remove('light-theme')
-            classes.add('dark-theme')
-            body.classList = classes
-            return
-        }
+        console.warn(error)
     }
-
-    classes.add('dark-theme')
-    body.classList = classes
 }
+
+onMounted(() => {
+
+    try {
+
+        const theme = window.localStorage.getItem('theme')
+
+        if (theme === 'light-theme') {
+
+            toggleTheme()
+        }
+
+    } catch (error) {
+
+        console.warn(error)
+    }
+})
 </script>
