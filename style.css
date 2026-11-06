@@ -38,8 +38,8 @@
     --failure-color: red;
 
     /* accent colors */
-    --primary-color: cyan;
-    --secondary-color: magenta;
+    --primary-accent-color: cyan;
+    --secondary-accent-color: magenta;
 }
 
 .light-theme {
@@ -55,8 +55,8 @@
     --failure-color: darkred;
 
     /* accent colors */
-    --primary-color: blue;
-    --secondary-color: purple;
+    --primary-accent-color: blue;
+    --secondary-accent-color: purple;
 }
 
 * {
@@ -65,12 +65,12 @@
 }
 
 a {
-    color: var(--primary-color);
+    color: var(--primary-accent-color);
     text-decoration: none;
 }
 
 a:visited {
-    color: var(--secondary-color);
+    color: var(--secondary-accent-color);
 }
 
 a:active,
@@ -141,7 +141,7 @@ header {
 }
 
 input {
-    accent-color: var(--primary-color);
+    accent-color: var(--primary-accent-color);
 }
 
 main {

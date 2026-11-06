@@ -1,7 +1,7 @@
 <!-- Copyright (c) 2026 Kirk Rader -->
 
 <template>
-    <math>
+    <math display="block">
         <component :is="table ? 'mtable' : 'mrow'">
             <component :is="table ? 'mtr' : 'mrow'">
                 <component :is="table ? 'mtd' : 'mrow'">
