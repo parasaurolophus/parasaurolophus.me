@@ -15,16 +15,7 @@ import { onMounted, onUnmounted, provide, ref } from 'vue'
 let mediaQuery = null
 const mobile = ref(true)
 
-const vcard = ref(`BEGIN:VCARD
-VERSION:4.0
-KIND:individual
-FN:parasaurolophus
-N:;parasaurolophus
-EMAIL:info@parasaurolophus.art
-URL:https://www.parasaurolophus.art
-URL:https://github.com/parasaurolophus
-URL:https://hyperfollow.com/kirkrader
-END:VCARD`)
+const vcard = ref(``)
 
 function updateMobile(query) {
 
@@ -36,10 +27,20 @@ provide('vcard', vcard)
 
 onMounted(() => {
 
+    fetch('/parasaurolophus.vcf')
+        .then(response => {
+            if (!response.ok) {
+                throw response.statusText
+            }
+            response.text().then(text => vcard.value = text)
+        })
+        .catch(error => console.error(error))
     mediaQuery = window.matchMedia('(width < 1200px)')
     updateMobile(mediaQuery)
     mediaQuery.addEventListener('change', updateMobile)
 })
 
-onUnmounted(() => mediaQuery.removeEventListener('change', updateMobile))
+onUnmounted(() => {
+    mediaQuery.removeEventListener('change', updateMobile)
+})
 </script>

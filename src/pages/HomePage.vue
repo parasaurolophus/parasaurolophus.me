@@ -10,7 +10,9 @@
         <template v-for="tab of tabs" :key="tab.label">
             <div v-if="tab.label === 'Contact'" :tab-value="tab.value">
                 <div class="contact">
-                    <QrCode v-model="vcard" size="large" />
+                    <a href="/parasaurolophus.vcf" type="text/vcard" download="parasaurolophus.vcf">
+                        <QrCode v-model="vcard" size="large" />
+                    </a>
                     <div>
                         <a href="mailto:info@parasaurolophus.art">
                             info@parasaurolophus.art
