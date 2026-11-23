@@ -7,7 +7,7 @@
             <div class="title">parasaurolophus</div>
             <BreadCrumbs />
         </div>
-        <MdiButton :path="mdiThemeLightDark" @click="toggleTheme" class="theme-button" />
+        <MdiButton :d="mdiThemeLightDark" @click="toggleTheme" class="theme-button" />
     </header>
 </template>
 

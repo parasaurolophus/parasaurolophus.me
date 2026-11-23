@@ -2,7 +2,7 @@
 
 <template>
     <svg :width="24 * scale" :height="24 * scale">
-        <path :d="path" />
+        <path :d="d" />
     </svg>
 </template>
 
@@ -13,9 +13,9 @@ svg path {
 </style>
 
 <script setup>
-const { path } = defineProps({
+const { d, scale } = defineProps({
 
-    path: {
+    d: {
         type: String,
         required: true,
     },

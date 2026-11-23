@@ -71,13 +71,6 @@ textarea {
 import { onMounted, ref, useTemplateRef, watch } from 'vue'
 
 const rendered = useTemplateRef('rendered')
-const source = ref(`<math display="block">
-    <mn>2</mn>
-    <mo>+</mo>
-    <mn>2</mn>
-    <mo>=</mo>
-    <mn>4</mn>
-</math>`)
 
 const presets = [
     {
@@ -88,34 +81,34 @@ const presets = [
             <mtd>
                 <mtext>Let</mtext>
                 <mspace width="0.5em" />
-                <mrow>
-                    <mi>Ω</mi>
-                    <mo>=</mo>
-                    <mrow>
-                        <mi>ω</mi>
-                        <mspace width="0.5em" />
-                        <mi>ω</mi>
-                    </mrow>
-                </mrow>
+                <mi>Ω</mi>
+            </mtd>
+            <mtd>
+                <mo>=</mo>
+            </mtd>
+            <mtd>
+                <mi>ω</mi>
+                <mspace width="0.5em" />
+                <mi>ω</mi>
             </mtd>
         </mtr>
         <mtr>
             <mtd>
                 <mtext>where</mtext>
                 <mspace width="0.5em" />
+                <mi>ω</mi>
+            </mtd>
+            <mtd>
+                <mo>=</mo>
+            </mtd>
+            <mtd>
+                <mo>λ</mo>
+                <mi>x</mi>
+                <mo>.</mo>
                 <mrow>
-                    <mi>ω</mi>
-                    <mo>=</mo>
-                    <mrow>
-                        <mo>λ</mo>
-                        <mi>x</mi>
-                        <mo>.</mo>
-                        <mrow>
-                            <mi>x</mi>
-                            <mspace width="0.5em" />
-                            <mi>x</mi>
-                        </mrow>
-                    </mrow>
+                    <mi>x</mi>
+                    <mspace width="0.5em" />
+                    <mi>x</mi>
                 </mrow>
             </mtd>
         </mtr>
@@ -259,11 +252,13 @@ const presets = [
     <mtable>
         <mtr>
             <mtd>
-                <mrow>
-                    <mi>Y</mi>
-                    <mi>f</mi>
-                </mrow>
+                <mi>Y</mi>
+                <mi>f</mi>
+            </mtd>
+            <mtd>
                 <mo>≡</mo>
+            </mtd>
+            <mtd>
                 <mrow>
                     <mi>f</mi>
                     <mo>(</mo>
@@ -271,51 +266,50 @@ const presets = [
                     <mi>f</mi>
                     <mo>)</mo>
                 </mrow>
-            </mtd>
-        </mtr>
-        <mtr>
-            <mtd>
+                <mspace width="0.5em" />
                 <mtext>where</mtext>
             </mtd>
         </mtr>
         <mtr>
             <mtd>
                 <mi>Y</mi>
+            </mtd>
+            <mtd>
                 <mo>=</mo>
+            </mtd>
+            <mtd>
+                <mo>λ</mo>
+                <mi>y</mi>
+                <mo>.</mo>
                 <mrow>
+                    <mo>(</mo>
                     <mo>λ</mo>
-                    <mi>y</mi>
+                    <mi>x</mi>
                     <mo>.</mo>
                     <mrow>
+                        <mi>y</mi>
                         <mo>(</mo>
-                        <mo>λ</mo>
                         <mi>x</mi>
-                        <mo>.</mo>
-                        <mrow>
-                            <mi>y</mi>
-                            <mo>(</mo>
-                            <mi>x</mi>
-                            <mspace width="0.5em" />
-                            <mi>x</mi>
-                            <mo>)</mo>
-                        </mrow>
+                        <mspace width="0.5em" />
+                        <mi>x</mi>
                         <mo>)</mo>
                     </mrow>
+                    <mo>)</mo>
+                </mrow>
+                <mrow>
+                    <mo>(</mo>
+                    <mo>λ</mo>
+                    <mi>x</mi>
+                    <mo>.</mo>
                     <mrow>
+                        <mi>y</mi>
                         <mo>(</mo>
-                        <mo>λ</mo>
                         <mi>x</mi>
-                        <mo>.</mo>
-                        <mrow>
-                            <mi>y</mi>
-                            <mo>(</mo>
-                            <mi>x</mi>
-                            <mspace width="0.5em" />
-                            <mi>x</mi>
-                            <mo>)</mo>
-                        </mrow>
+                        <mspace width="0.5em" />
+                        <mi>x</mi>
                         <mo>)</mo>
                     </mrow>
+                    <mo>)</mo>
                 </mrow>
             </mtd>
         </mtr>
@@ -328,17 +322,17 @@ const presets = [
     <mtable>
         <mtr>
             <mtd>
-                <mrow>
-                    <mi>S</mi>
-                    <mi>∈</mi>
-                    <mi>S</mi>
-                </mrow>
+                <mi>S</mi>
+                <mi>∈</mi>
+                <mi>S</mi>
+            </mtd>
+            <mtd>
                 <mo>≡</mo>
-                <mrow>
-                    <mi>S</mi>
-                    <mi>∉</mi>
-                    <mi>S</mi>
-                </mrow>
+            </mtd>
+            <mtd>
+                <mi>S</mi>
+                <mi>∉</mi>
+                <mi>S</mi>
             </mtd>
         </mtr>
         <mtr>
@@ -346,24 +340,28 @@ const presets = [
                 <mtext>where</mtext>
                 <mspace width="0.5em" />
                 <mi>S</mi>
+            </mtd>
+            <mtd>
                 <mo>=</mo>
+            </mtd>
+            <mtd>
+                <mo>{</mo>
+                <mi>s</mi>
+                <mo>:</mo>
                 <mrow>
-                    <mo>{</mo>
                     <mi>s</mi>
-                    <mo>:</mo>
-                    <mrow>
-                        <mi>s</mi>
-                        <mo>∉</mo>
-                        <mi>s</mi>
-                    </mrow>
-                    <mo>}</mo>
+                    <mo>∉</mo>
+                    <mi>s</mi>
                 </mrow>
+                <mo>}</mo>
             </mtd>
         </mtr>
     </mtable>
 </math>`,
     },
 ]
+
+const source = ref(presets[0].text)
 
 function populatePreset(src) {
 

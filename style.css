@@ -168,6 +168,10 @@ math {
     font-family: 'Latin Modern Math';
 }
 
+mtd {
+    text-align: start;
+}
+
 summary {
     cursor: pointer;
 }

@@ -1,7 +1,7 @@
 <!-- Copyright (c) Kirk Rader 2026 -->
 
 <template>
-    <MdiIcon :scale="scale" :path="path" class="button" />
+    <MdiIcon :scale="scale" :d="d" class="button" />
 </template>
 
 <style scoped>
@@ -13,9 +13,9 @@
 <script setup>
 import MdiIcon from './MdiIcon.vue'
 
-const { path } = defineProps({
+const { d, scale } = defineProps({
 
-    path: {
+    d: {
         type: String,
         required: true,
     },

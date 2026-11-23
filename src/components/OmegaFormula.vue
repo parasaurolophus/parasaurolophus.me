@@ -7,7 +7,7 @@
                 <component :is="table ? 'mtd' : 'mrow'">
                     <mtext>let</mtext>
                     <mspace width="0.5em" />
-                    <mi>ω</mi>
+                    <mi>Ω</mi>
                     <mo>=</mo>
                     <mrow>
                         <mi>ω</mi>
