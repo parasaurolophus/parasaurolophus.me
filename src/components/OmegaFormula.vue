@@ -7,12 +7,12 @@
                 <component :is="table ? 'mtd' : 'mrow'">
                     <mtext>let</mtext>
                     <mspace width="0.5em" />
-                    <mi>&Omega;</mi>
+                    <mi>ω</mi>
                     <mo>=</mo>
                     <mrow>
-                        <mi>&omega;</mi>
+                        <mi>ω</mi>
                         <mspace width="0.5em" />
-                        <mi>&omega;</mi>
+                        <mi>ω</mi>
                     </mrow>
                 </component>
             </component>
@@ -21,10 +21,10 @@
                     <mspace v-if="!table" width="0.5em" />
                     <mtext>where</mtext>
                     <mspace width="0.5em" />
-                    <mi>&omega;</mi>
+                    <mi>ω</mi>
                     <mo>=</mo>
                     <mrow>
-                        <mo>&lambda;</mo>
+                        <mo>λ</mo>
                         <mi>x</mi>
                         <mo>.</mo>
                         <mrow>

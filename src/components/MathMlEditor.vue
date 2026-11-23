@@ -89,12 +89,12 @@ const presets = [
                 <mtext>Let</mtext>
                 <mspace width="0.5em" />
                 <mrow>
-                    <mi>&Omega;</mi>
+                    <mi>Ω</mi>
                     <mo>=</mo>
                     <mrow>
-                        <mi>&omega;</mi>
+                        <mi>ω</mi>
                         <mspace width="0.5em" />
-                        <mi>&omega;</mi>
+                        <mi>ω</mi>
                     </mrow>
                 </mrow>
             </mtd>
@@ -104,10 +104,10 @@ const presets = [
                 <mtext>where</mtext>
                 <mspace width="0.5em" />
                 <mrow>
-                    <mi>&omega;</mi>
+                    <mi>ω</mi>
                     <mo>=</mo>
                     <mrow>
-                        <mo>&lambda;</mo>
+                        <mo>λ</mo>
                         <mi>x</mi>
                         <mo>.</mo>
                         <mrow>
@@ -131,8 +131,8 @@ const presets = [
                 <mo>lim</mo>
                 <mrow>
                     <mi>x</mi>
-                    <mo>&rarr;</mo>
-                    <mn>&infin;</mo>
+                    <mo>→</mo>
+                    <mn>∞</mo>
                 </mrow>
             </munder>
             <mo>(</mo>
@@ -146,7 +146,7 @@ const presets = [
         <mn>0</mn>
     </mrow>
     <mpadded width="2em" lspace="0.75em">
-        <mo>&equiv;</mo>
+        <mo>≡</mo>
     </mpadded>
     <mrow>
         <mrow>
@@ -154,7 +154,7 @@ const presets = [
                 <mo>lim</mo>
                 <mrow>
                     <mi>x</mi>
-                    <mo>&rarr;</mo>
+                    <mo>→</mo>
                     <mn>0</mo>
                 </mrow>
             </munder>
@@ -166,7 +166,7 @@ const presets = [
             <mo>)</mo>
         </mrow>
         <mo>=</mo>
-        <mn>&infin;</mn>
+        <mn>∞</mn>
     </mrow>
 </math>`,
     },
@@ -263,7 +263,7 @@ const presets = [
                     <mi>Y</mi>
                     <mi>f</mi>
                 </mrow>
-                <mo>&equiv;</mo>
+                <mo>≡</mo>
                 <mrow>
                     <mi>f</mi>
                     <mo>(</mo>
@@ -283,12 +283,12 @@ const presets = [
                 <mi>Y</mi>
                 <mo>=</mo>
                 <mrow>
-                    <mo>&lambda;</mo>
+                    <mo>λ</mo>
                     <mi>y</mi>
                     <mo>.</mo>
                     <mrow>
                         <mo>(</mo>
-                        <mo>&lambda;</mo>
+                        <mo>λ</mo>
                         <mi>x</mi>
                         <mo>.</mo>
                         <mrow>
@@ -303,7 +303,7 @@ const presets = [
                     </mrow>
                     <mrow>
                         <mo>(</mo>
-                        <mo>&lambda;</mo>
+                        <mo>λ</mo>
                         <mi>x</mi>
                         <mo>.</mo>
                         <mrow>
@@ -330,13 +330,13 @@ const presets = [
             <mtd>
                 <mrow>
                     <mi>S</mi>
-                    <mi>&in;</mi>
+                    <mi>∈</mi>
                     <mi>S</mi>
                 </mrow>
-                <mo>&equiv;</mo>
+                <mo>≡</mo>
                 <mrow>
                     <mi>S</mi>
-                    <mi>&notin;</mi>
+                    <mi>∉</mi>
                     <mi>S</mi>
                 </mrow>
             </mtd>
@@ -353,7 +353,7 @@ const presets = [
                     <mo>:</mo>
                     <mrow>
                         <mi>s</mi>
-                        <mo>&notin;</mo>
+                        <mo>∉</mo>
                         <mi>s</mi>
                     </mrow>
                     <mo>}</mo>

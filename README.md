@@ -1,4 +1,4 @@
-Copyright &copy; 2026 Kirk Rader
+Copyright © 2026 Kirk Rader
 
 # parasaurolophus.me
 

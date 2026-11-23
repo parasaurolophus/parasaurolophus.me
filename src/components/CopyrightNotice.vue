@@ -2,6 +2,6 @@
 
 <template>
     <span>
-        &copy; <a href="https://rader.us" target="_blank">Kirk Rader</a> 2026
+        © <a href="https://rader.us" target="_blank">Kirk Rader</a> 2026
     </span>
 </template>
