@@ -76,7 +76,7 @@ stylesheet, including values for the `--highlight-color` and
     </div>
 </template>
 
-<style scoped>
+<style module>
 .selectedTab {
     color: var(--primary-accent-color);
     background-color: var(--highlight-color);
