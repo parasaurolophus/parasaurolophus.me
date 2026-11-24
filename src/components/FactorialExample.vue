@@ -1,12 +1,15 @@
 <!-- Copyright (c) 2026 Kirk Rader -->
 
 <template>
-    <div class="columns">
-        <pre ref="source" class="copyable" @click="copy"></pre>
-        <div>
-            <div ref="rendered"></div>
-            <highlightjs :code="scheme" language="scheme" class="copyable" @click="copy" />
+    <div>
+        <div class="columns">
+            <pre ref="source" class="copyable" @click="copy"></pre>
+            <div>
+                <div ref="rendered"></div>
+                <highlightjs :code="scheme" language="scheme" class="copyable" @click="copy" />
+            </div>
         </div>
+        <dialog ref="copied" popover closedby="any" @click="close">Copied</dialog>
     </div>
 </template>
 
@@ -17,7 +20,7 @@
 }
 
 .copyable {
-    cursor: pointer;
+    cursor: copy;
 }
 </style>
 
@@ -110,12 +113,20 @@ const scheme = `(define (! n)
       a
       (f (- x 1) (* a x)))))`
 
+const copied = useTemplateRef('copied')
 const rendered = useTemplateRef('rendered')
 const source = useTemplateRef('source')
 
-function copy(target) {
+function close(event) {
+
+    event.target.close()
+}
+
+function copy(event) {
 
     navigator.clipboard?.writeText(event.target.innerText)
+        .then(() => copied.value.show())
+        .catch(error => alert(error))
 }
 
 onMounted(() => {
